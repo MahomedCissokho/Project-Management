@@ -55,7 +55,7 @@ const Sidebar: React.FC = () => {
           </li>
           <li className="mb-4">
             <Link
-              to=""
+              to="/TaskIndex"
               className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-white"
             >
               <ClipboardDocumentCheckIcon className="w-5 h-5 mr-3" />

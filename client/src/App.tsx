@@ -6,6 +6,7 @@ import ProjectList from './components/Dashboard/ProjectList'; // Exemple pour le
 import DashboardLayout from './components/Dashboard/DashboardLayout';
 import DashboardExpenses from './components/Expenses/DashboardExpenses';
 import FinancialList from './components/Expenses/Financial-list';
+import TaskIndex from './components/Task/Index';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           }
         />
         <Route path="/dashboadExpenses" element={<DashboardExpenses/>} />
+        <Route path="/TaskIndex" element={<TaskIndex/>} />
 
         <Route
           path="/teams"

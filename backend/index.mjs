@@ -17,6 +17,12 @@ mongoose.connect(MONGODB_URL)
   .then(() => console.log("Connexion au serveur de base de données réussie"))
   .catch((err) => console.error("Erreur lors de la connexion au serveur de base de données: " + err));
 
+
+
+app.listen(PORT, () => {
+    console.log("Le serveur backend s'exécute sur le port " + PORT);
+  })
+
 /**
  *  Configuration du serveur express
  */
@@ -31,6 +37,3 @@ app.use(cookieParser());
 
 // app.use('/', authRoute);
 
-app.listen(PORT, () => {
-  console.log("Le serveur backend s'exécute sur le port " + PORT);
-});

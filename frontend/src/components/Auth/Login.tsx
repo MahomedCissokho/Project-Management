@@ -1,27 +1,26 @@
-
+import { useNavigate } from "react-router";
 import Button from "../Button";
 import { Input } from "../Input";
 import logo from "../../assets/logo.png";
 import background from "../../assets/background.jpg";
-import { useNavigate } from "react-router";
 
 function SignIn() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const handleSignInSubmit = (e: { preventDefault: () => void; })=>{
+  const handleSignInSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    navigate("/dashboard")
-  }
+    navigate("/dashboard");
+  };
 
   return (
-    <div className="flex flex-col w-screen h-screen md:flex-row font-primary">
+    <div className="flex flex-col w-screen h-screen overflow-x-hidden md:flex-row font-primary">
       <img
         src={background}
         alt="management"
         className="hidden object-cover h-full md:block md:w-1/2"
       />
       <div className="flex flex-col items-center justify-center w-full h-full gap-5 px-2 py-3 md:w-1/2">
-        <img src={logo} alt="img" className="object-contain w-32 h-32 " />
+        <img src={logo} alt="img" className="object-contain w-32 h-32 rounded-full" />
         <h2 className="text-2xl font-bold text-gray-600">Connect to your account</h2>
         <p className="text-center text-gray-400">
           Please enter your username and password
@@ -30,7 +29,7 @@ function SignIn() {
           <div className="flex flex-col items-center justify-center gap-4 ">
             <div className="flex flex-col justify-center w-full gap-7">
               <Input label="Username" type="text" width="w-72" />
-              <Input label="Password" type="password"  width="w-72"/>
+              <Input label="Password" type="password" width="w-72" />
             </div>
             <div className="flex items-center justify-center mt-2">
               <Button
@@ -40,6 +39,15 @@ function SignIn() {
             </div>
           </div>
         </form>
+        <p className="text-gray-400">
+          Don't have an account?{" "}
+          <span
+            className="text-blue-600 cursor-pointer hover:underline"
+            onClick={() => navigate("/signup")}
+          >
+            Sign Up
+          </span>
+        </p>
       </div>
     </div>
   );

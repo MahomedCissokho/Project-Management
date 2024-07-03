@@ -2,74 +2,67 @@ export interface Project {
   id: number;
   name: string;
   description: string;
-  duration: number; // Durée en mois
-  budget: number; // Budget en euros
-  priority: string;
-  members: number;
+  duration: string;
+  budget: number;
+  type: string;
+  manager: string;
   progress: number;
-  projectLead: string; // Chef de projet
-  type: string; // Type de projet (ex: confidentiel, public, etc.)
+  expenses: number;
 }
-
 export const projects: Project[] = [
   {
     id: 1,
     name: 'Dropbox Design System',
     description: 'Research on AI advancements.',
-    duration: 6, // Durée en mois
-    budget: 20000,
-    priority: 'Medium',
-    members: 6,
-    progress: 15,
-    projectLead: 'Mandicou Ba',
+    duration: '6 months',
+    budget: 34000,
     type: 'Confidential',
+    manager: 'Mandicou Ba',
+    progress: 15,
+    expenses: 15000, // Exemple de données de dépenses pour ce projet
   },
   {
     id: 2,
     name: 'Slack Team UI Design',
     description: 'Research on Quantum Computing.',
-    duration: 12, // Durée en mois
-    budget: 35000,
-    priority: 'High',
-    members: 8,
+    duration: '12 months',
+    budget: 47000,
+    type: 'Confidential',
+    manager: 'Alassane Ba',
     progress: 35,
-    projectLead: 'Alassane Ba',
-    type: 'Public',
+    expenses: 22000,
   },
   {
     id: 3,
     name: 'GitHub Satellite',
     description: 'Study on Renewable Energy Sources.',
-    duration: 24, // Durée en mois
-    budget: 50000,
-    priority: 'Low',
-    members: 10,
-    progress: 75,
-    projectLead: 'Ibrahima Fall',
+    duration: '4 months',
+    budget: 120000,
     type: 'Confidential',
+    manager: 'Ibrahima Fall',
+    progress: 75,
+    expenses: 40000,
   },
   {
     id: 4,
     name: '3D Character Modelling',
     description: 'Innovations in Biotechnology.',
-    duration: 4, // Durée en mois
-    budget: 15000,
-    priority: 'Medium',
-    members: 5,
-    progress: 63,
-    projectLead: 'Idy Diop',
+    duration: '9 months',
+    budget: 89000,
     type: 'Confidential',
+    manager: 'Idy Diop',
+    progress: 63,
+    expenses: 30000,
   },
   {
     id: 5,
     name: 'Webapp Design System',
     description: 'Advanced Research in Nanotechnology.',
-    duration: 18, // Durée en mois
-    budget: 45000,
-    priority: 'Track',
-    members: 7,
+    duration: '8 months',
+    budget: 89000,
+    type: 'Confidential',
+    manager: 'Mandicou Ba',
     progress: 100,
-    projectLead: 'Mandicou Ba',
-    type: 'Public',
+    expenses: 28000,
   },
 ];

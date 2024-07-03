@@ -1,6 +1,5 @@
-import React from 'react';
 
-const CreateProject: React.FC = () => {
+const CreateProject = () => {
   return (
     <div>
       <h1 className="mb-6 text-3xl font-bold">Create New Project</h1>

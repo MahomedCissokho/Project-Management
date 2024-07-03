@@ -6,12 +6,14 @@ import ProjectList from './components/Dashboard/ProjectList';
 import CreateProject from './components/Dashboard/CreateProject'; // Exemple pour créer un projet
 import DashboardLayout from './components/Dashboard/DashboardLayout';
 import Teams from './components/Dashboard/Teams';
+import SignUp from './components/Auth/Register';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route
           path="/projects"

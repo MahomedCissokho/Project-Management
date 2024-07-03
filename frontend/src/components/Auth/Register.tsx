@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "../Button";
 import { Input } from "../Input";
@@ -8,25 +7,11 @@ import { Link } from "react-router-dom";
 
 function SignUp() {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    dateOfBirth: "",
-    placeOfBirth: "",
-    email: "",
-    username: "",
-    password: "",
-  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
 
   const handleSignUpSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
-    navigate("/dashboard");
+    navigate("/");
   };
 
   return (
@@ -52,15 +37,11 @@ function SignUp() {
               <Input
                 label="First Name"
                 type="text"
-                value={formData.firstName}
-                onChange={handleChange}
                 width="w-full md:w-1/2"
               />
               <Input
                 label="Last Name"
                 type="text"
-                value={formData.lastName}
-                onChange={handleChange}
                 width="w-full md:w-1/2"
               />
             </div>
@@ -68,38 +49,28 @@ function SignUp() {
               <Input
                 label="Date of Birth"
                 type="date"
-                value={formData.dateOfBirth}
-                onChange={handleChange}
                 width="w-full md:w-1/2"
               />
               <Input
                 label="Place of Birth"
                 type="text"
-                value={formData.placeOfBirth}
-                onChange={handleChange}
                 width="w-full md:w-1/2"
               />
             </div>
             <Input
               label="Email"
               type="email"
-              value={formData.email}
-              onChange={handleChange}
               width="w-full"
             />
             <div className="flex flex-col w-full gap-4 md:flex-row">
               <Input
                 label="Username"
                 type="text"
-                value={formData.username}
-                onChange={handleChange}
                 width="w-full md:w-1/2"
               />
               <Input
                 label="Password"
                 type="password"
-                value={formData.password}
-                onChange={handleChange}
                 width="w-full md:w-1/2"
               />
             </div>

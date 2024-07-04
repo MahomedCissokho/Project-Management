@@ -2,9 +2,8 @@ import  { useState } from 'react';
 import ProjectList from './ProjectList';
 import DashboardLayout from './DashboardLayout';
 import { CheckCircleIcon, UsersIcon, ChartPieIcon, ClipboardDocumentListIcon } from '@heroicons/react/16/solid';
-import photo from '../../assets/pp.jpg';
 import logo from '../../assets/logo.png';
-import { Link } from 'react-router-dom';
+import { UserButton } from '@clerk/clerk-react';
 
 const Dashboard = () => {
   const [showOptions, setShowOptions] = useState(false);
@@ -30,19 +29,8 @@ const Dashboard = () => {
 
           </div>
         </div>
-        <div className="relative bg-pink-400 rounded-full cursor-pointer rou" onClick={toggleOptions}>
-            <img src={photo} alt="Profile" className="object-cover w-12 h-12 rounded-full" />
-            {showOptions && (
-              <div className="absolute right-0 z-10 w-48 mt-2 bg-white border border-gray-200 rounded-lg shadow-md cursor-pointer">
-                <ul>
-                  <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">Profile</li>
-                  <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">Settings</li>
-                  <Link to="/">
-                    <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">Logout</li>
-                  </Link>
-                </ul>
-              </div>
-            )}
+        <div className="relative rounded-full cursor-pointer" onClick={toggleOptions}>
+            <UserButton/>
         </div>
       </div>
 

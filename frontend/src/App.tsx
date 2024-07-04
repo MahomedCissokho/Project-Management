@@ -1,19 +1,19 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SignIn from './components/Auth/Login';
 import Dashboard from './components/Dashboard/Dashboard';
 import ProjectList from './components/Dashboard/ProjectList';
-import CreateProject from './components/Dashboard/CreateProject'; // Exemple pour créer un projet
+import CreateProject from './components/Dashboard/CreateProject'; 
 import DashboardLayout from './components/Dashboard/DashboardLayout';
 import Teams from './components/Dashboard/Teams';
-import SignUp from './components/Auth/Register';
 
-const App: React.FC = () => {
+import SignIn from './components/SignIn';
+import Users from './components/Dashboard/Users';
+import AddUser from './components/Dashboard/AddUser';
+
+const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/" element={<SignIn/>} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route
           path="/projects"
@@ -24,7 +24,7 @@ const App: React.FC = () => {
           }
         />
         <Route
-          path="/projects/teams"
+          path="/users/teams"
           element={
             <DashboardLayout>
               <Teams/>
@@ -32,10 +32,26 @@ const App: React.FC = () => {
           }
         />
         <Route
-          path="/projects/create"
+          path="/projects/new"
           element={
             <DashboardLayout>
               <CreateProject />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/users/list"
+          element={
+            <DashboardLayout>
+              <Users/>
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/users/new"
+          element={
+            <DashboardLayout>
+              <AddUser/>
             </DashboardLayout>
           }
         />

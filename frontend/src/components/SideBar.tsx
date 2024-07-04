@@ -14,6 +14,7 @@ import {
 } from "@heroicons/react/16/solid";
 import { DeviceTabletIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import { useUser } from "@clerk/clerk-react";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -74,7 +75,9 @@ const Sidebar = () => {
           className="flex items-center justify-center w-full text-2xl text-center text-neutral-700"
         >
           Welcome <img src={hand} alt="hands" className="w-5 h-5 mr-2" />
-          Cisco 
+          {
+            useUser().user?.username
+          }
         </motion.div>
       </div>
       <nav className="flex-1 p-4 pt-5">

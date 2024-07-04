@@ -6,7 +6,13 @@ import ProjectList from './components/Dashboard/ProjectList'; // Exemple pour le
 import DashboardLayout from './components/Dashboard/DashboardLayout';
 import DashboardExpenses from './components/Expenses/DashboardExpenses';
 import FinancialList from './components/Expenses/Financial-list';
-import TaskIndex from './components/Task/Index';
+import CreateProject from './components/Project/CreateProject';
+import TaskForm from './components/Task/TaskForm';
+import Assign from './components/Task/Assign';
+import TaskIndex from './components/Task/TaskIndex';
+import CreateUser from './components/Users/CreateUser';
+import Team from './components/Users/Team';
+import UserList from './components/Users/UserList';
 
 const App: React.FC = () => {
   return (
@@ -24,15 +30,25 @@ const App: React.FC = () => {
             </DashboardLayout>
           }
         />
-        <Route path="/dashboadExpenses" element={<DashboardExpenses/>} />
-        <Route path="/TaskIndex" element={<TaskIndex/>} />
+        <Route path="/dashboadExpenses" element={<DashboardExpenses/>} /> 
+        <Route path="/tasksAssign" element={<Assign/>} />
+        <Route path="/tasks" element={<TaskForm/>} />
+        <Route path="/taskIndex" element={<TaskIndex/>} />
+
+        <Route path="/CreateUser" element={<CreateUser/>} />
+        <Route path="/Userslist" element={<UserList/>} />
+
 
         <Route
           path="/teams"
           element={
-            <DashboardLayout>
-              <div>Teams Component</div> {/* Créez et importez votre composant Teams ici */}
-            </DashboardLayout>
+               <Team/>
+          }
+        />
+         <Route
+          path="/createProject"
+          element={
+              <CreateProject />
           }
         />
       </Routes>

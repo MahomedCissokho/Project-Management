@@ -35,7 +35,7 @@ function SignIn() {
         </h2>
         <SignedOut>
           <div className="flex gap-3">
-          <SignUpButton mode="modal"><button>Sign Up</button></SignUpButton>  
+         { /*<SignUpButton mode="modal"><button>Sign Up</button></SignUpButton>  */}
           <SignInButton mode="modal">Sign In</SignInButton>  
           </div>
         </SignedOut>

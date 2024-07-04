@@ -4,10 +4,10 @@ import { FinancialRecordForm } from "./Financial-record-form";
 import { FinancialRecordsProvider } from "../../../contexts/financial-record-context";
 
 const DashboardExpenses: React.FC = () => {
-  const { user } = useUser();
 
   return (
     <DashboardLayout>
+      
       <div className="">
         <h1 className="mb-6 text-3xl font-bold text-center">Demandes de Dépenses</h1>
         <FinancialRecordsProvider>
